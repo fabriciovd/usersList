@@ -1,7 +1,6 @@
 import User from "./User";
 
 export default function Table({users}) {
-  // console.log(users);  
     return(
         <div className="table-wrapper">
             <table className="table">

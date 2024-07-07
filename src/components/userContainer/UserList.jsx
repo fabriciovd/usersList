@@ -1,4 +1,5 @@
 import AddButton from "./AddButton";
+import CreateUser from "./CreateUser";
 import Pagination from "./Pagination";
 import Search from "./Search";
 import Table from "./Table";
@@ -8,6 +9,8 @@ const URL = "http://localhost:3030/jsonstore";
 
 export default function UserList(props) {
   const [users, setUsers] = useState([]);
+  const [onCloseCreate, setOnCloseCreate] = useState(false);
+  const [onClose, setOnClose] = useState(false);
 
   useEffect(() => {
     fetch(`${URL}/users`)
@@ -24,7 +27,13 @@ export default function UserList(props) {
         <Table
         users={users}
         />
-        <AddButton />
+        {onCloseCreate && <CreateUser 
+        onCloseCreate={()=>{
+          setOnCloseCreate(false);}}
+        />}
+        <AddButton 
+          onClick={()=>{setOnCloseCreate(true);}}
+          />
         <Pagination/>
       </section>
       {/* <UserDetails /> */}
