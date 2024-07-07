@@ -1,7 +1,7 @@
 import AddButton from "./AddButton";
 import Pagination from "./Pagination";
 import Search from "./Search";
-import TableWrapper from "./TableWrapper";
+import Table from "./Table";
 import UserDetails from "./UserDetails";  
 import { useEffect, useState } from "react";
 const URL = "http://localhost:3030/jsonstore";
@@ -13,7 +13,7 @@ export default function UserList(props) {
     fetch(`${URL}/users`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(Object.values(data));
+        // console.log(Object.values(data));
         setUsers(Object.values(data));
       });
   }, []);
@@ -21,7 +21,9 @@ export default function UserList(props) {
     <>
       <section className="card users-container">
         <Search />
-        <TableWrapper />
+        <Table
+        users={users}
+        />
         <AddButton />
         <Pagination/>
       </section>
