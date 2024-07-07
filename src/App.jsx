@@ -1,22 +1,21 @@
-import { useState } from 'react'
-import Header from './components/header/Header'
-import Footer from './components/footer/Footer'
-import UserList from './components/userContainer/UserList'
-import './styles.css'
+import { useState } from "react";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import UserList from "./components/userContainer/UserList";
+import "./styles.css";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <Header />
       <main className="main">
-      <UserList />
+        <UserList />
       </main>
-      
+
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

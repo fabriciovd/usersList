@@ -1,6 +1,6 @@
 export default function Table(props) {
     return(
-        <div class="table-wrapper">
+        <div className="table-wrapper">
             <table className="table">
           <thead>
             <tr>
